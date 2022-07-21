@@ -82,7 +82,7 @@ posts.forEach((post,indice)=>{
     postDom.innerHTML += `<div class="post__header">
     <div class="post-meta">                    
         <div class="post-meta__icon">
-            <img class="profile-pic" src="${post.author.image}" alt="Phil Mangione">                    
+            <img class="profile-pic" src="${post.author.image}" alt="${post.author.name}">                    
         </div>
         <div class="post-meta__data">
             <div class="post-meta__author">${post.author.name}</div>
@@ -103,11 +103,30 @@ posts.forEach((post,indice)=>{
             </a>
         </div>
         <div class="likes__counter">
-            Piace a <b id="like-counter-1" class="js-likes-counter">${post.likes}</b> persone
+            Piace a <b id="like-counter-${post.id}" class="js-likes-counter">${post.likes}</b> persone
         </div>
     </div> 
-</div>            `;
+</div>`;
     
     
 });
 
+
+const jsLikeButtonsDom = document.getElementById('js-like-buttons');
+
+for (let i=0; i < jsLikeButtonsDom.length; i++){
+    jsLikeButtonsDom[i].addEventListener('click',(e)=>{
+        e.preventDefault();
+        console.log(e.target.dataset.postid);
+        this.classList.add('like-button--liked');
+
+        const postId = this.getAttribute('data-postid');
+        const likeCounterDom = document.getElementById(`like-counter-${postId}`);
+        console.log(postId);
+
+        
+        likeCounterDom.innerHTML = parseInt(likeCounterDom.innerHTML) + 1;
+    
+    }
+    )
+}
