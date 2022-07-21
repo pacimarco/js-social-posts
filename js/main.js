@@ -113,7 +113,7 @@ posts.forEach((post,indice)=>{
 });
 
 
-const jsLikeButtonsDom = document.getElementById('js-like-buttons');
+const jsLikeButtonsDom = document.getElementsByClassName('js-like-buttons');
 
 for (let i=0; i < jsLikeButtonsDom.length; i++){
     jsLikeButtonsDom[i].addEventListener('click',(e)=>{
