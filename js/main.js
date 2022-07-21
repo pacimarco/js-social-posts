@@ -122,7 +122,7 @@ for (let i=0; i < jsLikeButtonsDom.length; i++){
         this.classList.add('like-button--liked');
 
         const postId = this.getAttribute('data-postid');
-        const likeCounterDom = document.getElementById(`like-counter-${postId}`);
+        const likeCounterDom = document.getElementById('like-counter-' + postId);
         console.log(postId);
 
         
