@@ -76,6 +76,7 @@ images.forEach((img,indice)=>{
                     </div>
 
 */
+const likedArr = [];
 const postDom = document.querySelector('.post');
 posts.forEach((post,indice)=>{
     console.log(post.id,post.content,post.media,post.author,post.likes,post.created);
@@ -126,7 +127,7 @@ for (let i=0; i < jsLikeButtonsDom.length; i++){
 
         
         likeCounterDom.innerHTML = parseInt(likeCounterDom.innerHTML) + 1;
-    
+        likedArr.push(postId);
     }
     )
 }
