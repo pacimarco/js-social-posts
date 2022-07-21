@@ -113,15 +113,15 @@ posts.forEach((post,indice)=>{
 });
 
 
-const jsLikeButtonsDom = document.getElementsByClassName('js-like-buttons');
+const jsLikeButtonsDom = document.getElementsByClassName('js-like-button');
 
 for (let i=0; i < jsLikeButtonsDom.length; i++){
     jsLikeButtonsDom[i].addEventListener('click',(e)=>{
         e.preventDefault();
         console.log(e.target.dataset.postid);
-        this.classList.add('like-button--liked');
+        e.target.classList.add('like-button--liked');
 
-        const postId = this.getAttribute('data-postid');
+        const postId = e.target.getAttribute('data-postid');
         const likeCounterDom = document.getElementById('like-counter-' + postId);
         console.log(postId);
 
